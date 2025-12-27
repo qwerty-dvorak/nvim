@@ -6,10 +6,11 @@ vim.g.mapleader = " "
 local langs = require("core.constants")
 
 require("lazy").setup({
-	spec = {
-		require("plugins.treesitter")(langs.parsed),
-		require("plugins.mason")(langs.lsp),
-	},
+    spec = {
+        require("plugins.treesitter")(langs.parsed),
+        require("plugins.mason")(langs.lsp),
+        require("plugins.oil")(),
+    },
 })
 
 require("config.autocommands")(langs.parsed)
