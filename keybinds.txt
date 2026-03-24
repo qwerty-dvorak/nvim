@@ -144,13 +144,14 @@ FUGITIVE (lua/plugins/fugitive.lua)
   <leader>gs        Git status
   <leader>ga        Git add current file
   <leader>gA        Git add all files
-  <leader>gr        Git revert current file
-  <leader>gR        Git revert all files
+  <leader>gr        Revert current file
+  <leader>gR        Revert all files
   <leader>gc        Git commit
   <leader>gp        Git push
   <leader>gl        Git log
   <leader>gb        Git blame
   <leader>gd        Git diff
+  <leader>gB        Toggle Git blame display in lualine
 
 --------------------------------------------------------------------------------
 OPENCODE (lua/plugins/opencode.lua)
