@@ -244,6 +244,7 @@ VISUAL MODE
 --------------------------------------------------------------------------------
 TERMINAL
 --------------------------------------------------------------------------------
+  <C-j>             Open terminal in vertical split
   :terminal          Open terminal
   <C-\><C-n>        Exit terminal insert mode
   <C-o>             Execute normal command in terminal

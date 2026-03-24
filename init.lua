@@ -114,6 +114,9 @@ keymap("n", "<leader>tc", ":tabclose<CR>", opts)   -- [t]ab [c]lose
 keymap("n", "<C-Tab>", ":tabnext<CR>", opts)       -- Cycle forward
 keymap("n", "<C-S-Tab>", ":tabprevious<CR>", opts) -- Cycle backward
 
+-- Terminal
+keymap("n", "<C-j>", ":vsplit | terminal<CR>", opts) -- Terminal in vertical split
+
 -- Jump list navigation
 keymap("n", "<C-o>", "<C-o>", opts)                 -- Jump back (built-in)
 keymap("n", "<leader>j", "<C-i>", opts)             -- Jump forward
