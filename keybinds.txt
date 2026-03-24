@@ -47,7 +47,7 @@ Tab Management
 
 Jump List
   <C-o>             Jump back
-  <leader>j         Jump forward
+  <C-i>             Jump forward
   <leader>jl        View jump list
 
 Gitsigns
@@ -244,7 +244,7 @@ VISUAL MODE
 --------------------------------------------------------------------------------
 TERMINAL
 --------------------------------------------------------------------------------
-  <C-j>             Open terminal in vertical split
+  <leader>t         Open terminal in vertical split
   :terminal          Open terminal
   <C-\><C-n>        Exit terminal insert mode
   <C-o>             Execute normal command in terminal

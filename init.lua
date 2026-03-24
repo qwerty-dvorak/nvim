@@ -50,6 +50,7 @@ require("lazy").setup({
         require("plugins.opencode"),
         require("plugins.fugitive"),
         require("plugins.dap"),
+        require("plugins.blink_cmp"),
     },
 })
 
@@ -115,11 +116,11 @@ keymap("n", "<C-Tab>", ":tabnext<CR>", opts)       -- Cycle forward
 keymap("n", "<C-S-Tab>", ":tabprevious<CR>", opts) -- Cycle backward
 
 -- Terminal
-keymap("n", "<C-j>", ":vsplit | terminal<CR>", opts) -- Terminal in vertical split
+keymap("n", "<leader>t", ":vsplit | terminal<CR>", opts) -- Terminal in vertical split
 
 -- Jump list navigation
-keymap("n", "<C-o>", "<C-o>", opts)                 -- Jump back (built-in)
-keymap("n", "<leader>j", "<C-i>", opts)             -- Jump forward
+keymap("n", "<C-o>", "<C-o>", opts)                 -- Jump back
+keymap("n", "<C-i>", "<C-i>", opts)                 -- Jump forward
 keymap("n", "<leader>jl", ":jumps<CR>", opts)       -- [j]ump [l]ist
 
 -- Set colorscheme
