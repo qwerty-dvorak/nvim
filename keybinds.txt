@@ -55,9 +55,17 @@ Gitsigns
   [c                Previous hunk
   <leader>hs        Stage hunk
   <leader>hr        Reset hunk
+  v<leader>hs       Stage selected lines
+  v<leader>hr       Reset selected lines
+  <leader>hS        Stage buffer
+  <leader>hu        Undo stage hunk
+  <leader>hR        Reset buffer
   <leader>hp        Preview hunk
-  <leader>hb        Toggle blame line
+  <leader>hb        Toggle blame line (full)
+  <leader>tb        Toggle current line blame
   <leader>hd        Diff this file
+  <leader>hD        Diff this file (cached)
+  <leader>td        Toggle deleted signs
 
 
 --------------------------------------------------------------------------------
@@ -163,6 +171,8 @@ OPENCODE (lua/plugins/opencode.lua)
   goo               Add current line to opencode
   <S-C-u>           Scroll opencode up
   <S-C-d>           Scroll opencode down
+  +                 Increment under cursor
+  -                 Decrement under cursor
 
 --------------------------------------------------------------------------------
 BUILT-IN NEOVIM (no mapping needed)

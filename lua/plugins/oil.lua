@@ -2,8 +2,9 @@ return {
     "stevearc/oil.nvim",
     dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     lazy = false,
+    cmd = { "Oil" },
     keys = {
-        { "-", "<CMD>Oil<CR>", desc = "Open parent directory" }
+        { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
     },
     opts = {
         skip_confirm_for_simple_edits = true,
