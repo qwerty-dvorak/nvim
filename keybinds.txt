@@ -1,0 +1,240 @@
+================================================================================
+                           NEOVIM KEYBINDINGS
+================================================================================
+
+LEADER KEY: Space (" ")
+
+--------------------------------------------------------------------------------
+NOTE ON ADDING PLUGINS
+--------------------------------------------------------------------------------
+When you add a new plugin:
+  1. Add the plugin spec under `lua/plugins/`.
+  2. Register it in `init.lua` inside `require("lazy").setup(...)`.
+  3. Document any new keymaps here in `keybinds.txt`.
+  4. Make sure the README stays in sync with any setup or usage changes.
+
+Recommended plugin checklist:
+  - Keep the spec minimal and consistent with the other plugin files.
+  - Prefer lazy-loading unless the plugin must load at startup.
+  - Add or update key descriptions so mappings are easy to discover.
+  - Verify the plugin's keys do not conflict with existing bindings.
+
+--------------------------------------------------------------------------------
+GENERAL (init.lua)
+--------------------------------------------------------------------------------
+Splits
+  <leader>v          Open vertical split
+  <leader>b          Open horizontal split
+  <leader>q          Close current split
+
+Window Navigation
+  <C-h>             Move to left window
+  <C-j>             Move to bottom window
+  <C-k>             Move to top window
+  <C-l>             Move to right window
+
+Window Resize
+  <A-h>             Shrink width (vertical resize -2)
+  <A-l>             Grow width (vertical resize +2)
+  <A-k>             Grow height (resize +2)
+  <A-j>             Shrink height (resize -2)
+
+Tab Management
+  <leader>tn         New tab
+  <leader>tc         Close tab
+  <C-Tab>            Next tab
+  <C-S-Tab>          Previous tab
+
+Jump List
+  <C-o>             Jump back
+  <leader>j         Jump forward
+  <leader>jl        View jump list
+
+Gitsigns
+  ]c                Next hunk
+  [c                Previous hunk
+  <leader>hs        Stage hunk
+  <leader>hr        Reset hunk
+  <leader>hp        Preview hunk
+  <leader>hb        Toggle blame line
+  <leader>hd        Diff this file
+
+
+--------------------------------------------------------------------------------
+LSP (lua/config/autocmds/lsp.lua)
+--------------------------------------------------------------------------------
+Navigation
+  gd                Go to definition
+  gD                Go to declaration
+  gr                Find references
+
+Diagnostics
+  <leader>e         Open floating diagnostic
+  ]d                Next diagnostic
+  [d                Previous diagnostic
+  <leader>la        List all diagnostics (quickfix)
+
+Actions
+  <leader>rn        Rename
+
+Formatting
+  Auto-format on save (via clangd for C)
+
+--------------------------------------------------------------------------------
+TREESITTER (lua/config/autocmds/treesitter.lua)
+--------------------------------------------------------------------------------
+Folding
+  <leader>z         Toggle fold
+
+--------------------------------------------------------------------------------
+DAP - Debugging (lua/plugins/dap.lua)
+--------------------------------------------------------------------------------
+  <F5>              Start/Continue debugging
+  <leader>bp        Toggle breakpoint
+  <leader>db        List breakpoints
+  <leader>dc        Continue
+  <leader>ds        Step over
+  <leader>di        Step into
+  <leader>do        Step out
+  <leader>dr        Open DAP REPL
+
+Breakpoint Signs
+  ●                 Breakpoint set (red)
+  ▶                 Current line (yellow)
+  ○                 Breakpoint rejected
+
+--------------------------------------------------------------------------------
+MINI.PICK (lua/plugins/mini_pick.lua)
+--------------------------------------------------------------------------------
+  <leader>ff        Find files
+  <leader>fg        Grep project (live)
+  <leader>fb        Find buffers
+  <leader>fr        Resume last pick
+  <leader>fh        Find help
+  <leader>fw        Grep word under cursor
+  <leader>fs        Grep in current file
+
+--------------------------------------------------------------------------------
+OIL - File Explorer (lua/plugins/oil.lua)
+--------------------------------------------------------------------------------
+Global
+  -                 Open parent directory (file explorer)
+
+In Oil Buffer
+  <CR>              Select/open file
+  q                 Close
+  g?                Show help
+  <C-s>             Open in horizontal split
+  <C-v>             Open in vertical split
+  <C-t>             Open in new tab
+  <C-p>             Preview
+  <Backspace>       Go to parent directory
+  _                 Open current working directory
+  `                 Change directory
+  ~                 Change directory to home
+  g.                Toggle hidden files
+
+Oil Git Status
+  git status decorations are shown automatically in Oil buffers
+  staged / modified / untracked markers appear next to files
+
+--------------------------------------------------------------------------------
+FUGITIVE (lua/plugins/fugitive.lua)
+--------------------------------------------------------------------------------
+  <leader>gs        Git status
+  <leader>ga        Git add current file
+  <leader>gA        Git add all files
+  <leader>gr        Git revert current file
+  <leader>gR        Git revert all files
+  <leader>gc        Git commit
+  <leader>gp        Git push
+  <leader>gl        Git log
+  <leader>gb        Git blame
+  <leader>gd        Git diff
+
+--------------------------------------------------------------------------------
+OPENCODE (lua/plugins/opencode.lua)
+--------------------------------------------------------------------------------
+  <C-a>             Ask opencode on selection/current context
+  <C-x>             Open opencode action picker
+  <C-.>             Toggle opencode panel
+  go                Add motion range to opencode
+  goo               Add current line to opencode
+  <S-C-u>           Scroll opencode up
+  <S-C-d>           Scroll opencode down
+
+--------------------------------------------------------------------------------
+BUILT-IN NEOVIM (no mapping needed)
+--------------------------------------------------------------------------------
+  :w                Save
+  :q                Quit
+  :wq               Save and quit
+  :sp               Horizontal split
+  :vsp              Vertical split
+  :e <file>         Edit file
+  :bd               Buffer delete
+  :ls               List buffers
+  :jumps            View jump list
+  /                 Search forward
+  ?                 Search backward
+  n                 Next search match
+  N                 Previous search match
+  *                 Search word under cursor
+  zz                Center screen on cursor
+  zt                Top screen on cursor
+  zb                Bottom screen on cursor
+  ci"               Change inside quotes
+  ca"               Change around quotes
+  dap               Delete around paragraph
+  cip               Change inside paragraph
+  g;                Go to last edit
+  gg                Go to first line
+  G                 Go to last line
+  H                 Go to top of screen
+  M                 Go to middle of screen
+  L                 Go to bottom of screen
+  %                 Match bracket
+  >>                Indent right
+  <<                Indent left
+  ==                Auto-indent
+  u                 Undo
+  <C-r>             Redo
+  .                 Repeat last command
+  >>                Indent
+  <<                Dedent
+  yy                Yank line
+  p                 Paste after
+  P                 Paste before
+  dd                Delete line
+  dw                Delete word
+  x                 Delete character
+  r                 Replace character
+  ~                 Toggle case
+  gi                Go to last insert position
+  gv                Reselect last visual selection
+  :X                Encrypt file (enter password)
+  :N                Unencrypt file
+
+--------------------------------------------------------------------------------
+VISUAL MODE
+--------------------------------------------------------------------------------
+  v                 Enter visual mode
+  V                 Visual line mode
+  <C-v>             Visual block mode
+  >                 Indent
+  <                 De-indent
+  y                 Yank
+  d                 Delete
+  c                 Change
+  ~                 Toggle case
+  U                 Uppercase
+  u                 Lowercase
+
+--------------------------------------------------------------------------------
+TERMINAL
+--------------------------------------------------------------------------------
+  :terminal          Open terminal
+  <C-\><C-n>        Exit terminal insert mode
+  <C-o>             Execute normal command in terminal
+
+================================================================================

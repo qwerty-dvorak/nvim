@@ -8,7 +8,7 @@ return function(langs)
             vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
             vim.wo.foldlevel = 15
             vim.wo.foldenable = true
-            vim.keymap.set('n', '<Tab>', 'za', { buffer = args.buf, desc = "Toggle Fold" })
+            vim.keymap.set('n', '<leader>z', 'za', { buffer = args.buf, desc = "Toggle Fold" })
             vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
             vim.bo[args.buf].tabstop = 4
             vim.bo[args.buf].shiftwidth = 4
