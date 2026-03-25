@@ -119,9 +119,9 @@ keymap("n", "<C-S-Tab>", ":tabprevious<CR>", opts) -- Cycle backward
 keymap("n", "<leader>t", ":vsplit | terminal<CR>", opts) -- Terminal in vertical split
 
 -- Jump list navigation
-keymap("n", "<C-o>", "<C-o>", opts)                 -- Jump back
-keymap("n", "<C-i>", "<C-i>", opts)                 -- Jump forward
-keymap("n", "<leader>jl", ":jumps<CR>", opts)       -- [j]ump [l]ist
+keymap("n", "<C-o>", "<C-o>", opts)           -- Jump back
+keymap("n", "<C-i>", "<C-i>", opts)           -- Jump forward
+keymap("n", "<leader>jl", ":jumps<CR>", opts) -- [j]ump [l]ist
 
 -- Set colorscheme
 vim.cmd.colorscheme "void_black"
