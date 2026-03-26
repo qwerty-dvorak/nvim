@@ -123,6 +123,16 @@ MINI.PICK (lua/plugins/mini_pick.lua)
   <leader>fs        Grep in current file
 
 --------------------------------------------------------------------------------
+BLINK.CMP - Autocomplete (lua/plugins/blink_cmp.lua)
+--------------------------------------------------------------------------------
+  <CR>              Accept autocomplete suggestion
+  <Tab>             Accept suggestion / select next
+  <S-Tab>           Select previous
+  <C-e>             Hide completion menu
+  <C-k>             Scroll documentation up
+  <C-j>             Scroll documentation down
+
+--------------------------------------------------------------------------------
 OIL - File Explorer (lua/plugins/oil.lua)
 --------------------------------------------------------------------------------
 Global
