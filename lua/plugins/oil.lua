@@ -1,10 +1,6 @@
 return {
     "stevearc/oil.nvim",
     lazy = false,
-    cmd = "Oil",
-    keys = {
-        { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
-    },
     opts = {
         skip_confirm_for_simple_edits = true,
         view_options = {

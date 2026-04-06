@@ -60,7 +60,7 @@ return {
             },
         }
 
-        vim.keymap.set("n", "<F5>", dap.continue, { desc = "DAP: Continue/Start" })
+        vim.keymap.set("n", "<leader>dap", dap.continue, { desc = "DAP: Continue/Start" })
         vim.keymap.set("n", "<leader>bp", dap.toggle_breakpoint, { desc = "DAP: Toggle Breakpoint" })
         vim.keymap.set("n", "<leader>db", dap.list_breakpoints, { desc = "DAP: List Breakpoints" })
         vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "DAP: Open REPL" })

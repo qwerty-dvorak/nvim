@@ -97,7 +97,7 @@ Folding
 --------------------------------------------------------------------------------
 DAP - Debugging (lua/plugins/dap.lua)
 --------------------------------------------------------------------------------
-  <F5>              Start/Continue debugging
+  <leader>dap              Start/Continue debugging
   <leader>bp        Toggle breakpoint
   <leader>db        List breakpoints
   <leader>dc        Continue
@@ -115,7 +115,7 @@ Breakpoint Signs
 MINI.PICK (lua/plugins/mini_pick.lua)
 --------------------------------------------------------------------------------
   <leader>ff        Find files
-  <leader>fg        Grep project (live)
+  <leader>fg        Grep project
   <leader>fb        Find buffers
   <leader>fr        Resume last pick
   <leader>fh        Find help

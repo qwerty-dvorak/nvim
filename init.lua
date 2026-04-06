@@ -59,6 +59,9 @@ require("lazy").setup({
 -- The module returns a function that we call with language data
 require("config.autocommands")(langs.parsed)
 
+-- Step 5: Load treesitter textobjects
+require("config.treesitter-textobjects")
+
 --[[
     VIM.OPT SETTINGS
     ================
@@ -115,6 +118,9 @@ keymap("n", "<leader>tc", ":tabclose<CR>", opts)   -- [t]ab [c]lose
 keymap("n", "<C-Tab>", ":tabnext<CR>", opts)       -- Cycle forward
 keymap("n", "<C-S-Tab>", ":tabprevious<CR>", opts) -- Cycle backward
 
+-- Oil
+keymap("n", "-", "<cmd>Oil<cr>", opts) -- Open parent directory
+
 -- Terminal
 keymap("n", "<leader>t", ":vsplit | terminal<CR>", opts) -- Terminal in vertical split
 
@@ -125,6 +131,8 @@ keymap("n", "<leader>jl", ":jumps<CR>", opts) -- [j]ump [l]ist
 
 -- Set colorscheme
 vim.cmd.colorscheme "void_black"
+
+
 
 --[[
     PLUGIN WORKFLOW
