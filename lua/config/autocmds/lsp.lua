@@ -7,9 +7,6 @@ return function()
         callback = function(event)
             local opts = { buffer = event.buf }
             local client = vim.lsp.get_client_by_id(event.data.client_id)
-            if client then
-                vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
-            end
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
             vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)

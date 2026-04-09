@@ -24,6 +24,12 @@
 -- After this, require("lazy") will find: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy.lua
 vim.opt.rtp:prepend("/home/afish/.local/share/nvim/lazy/lazy.nvim")
 
+-- Disable optional language providers we don't use.
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- Leader key: use space as the prefix for all leader mappings
 vim.g.mapleader = " "
 
@@ -41,6 +47,7 @@ require("lazy").setup({
         -- Functions are called with language data to customize the plugins
         require("plugins.treesitter")(langs.parsed),
         require("plugins.mason")(langs.lsp),
+        require("plugins.null-ls")(),
         require("plugins.oil"),
         require("plugins.oil_git_status"),
         require("plugins.mini_pick"),

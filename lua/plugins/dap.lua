@@ -2,12 +2,24 @@ return {
     "mfussenegger/nvim-dap",
     config = function()
         local dap = require("dap")
+        local dap_breakpoints = require("dap.breakpoints")
         local breakpoint_store = vim.fn.stdpath("data") .. "/dap_breakpoints.json"
 
         local function save_breakpoints()
             local breakpoints = {}
-            for path, bps in pairs(dap.breakpoints) do
-                breakpoints[path] = bps
+            for bufnr, bps in pairs(dap_breakpoints.get()) do
+                local path = vim.api.nvim_buf_get_name(bufnr)
+                if path ~= "" then
+                    breakpoints[path] = {}
+                    for _, bp in ipairs(bps) do
+                        table.insert(breakpoints[path], {
+                            line = bp.line,
+                            condition = bp.condition,
+                            hitCondition = bp.hitCondition,
+                            logMessage = bp.logMessage,
+                        })
+                    end
+                end
             end
             local file = io.open(breakpoint_store, "w")
             if file then
@@ -21,10 +33,19 @@ return {
             if file then
                 local content = file:read("*all")
                 file:close()
-                local breakpoints = vim.json.decode(content)
-                if breakpoints then
+                local ok, breakpoints = pcall(vim.json.decode, content)
+                if ok and breakpoints then
                     for path, bps in pairs(breakpoints) do
-                        dap.breakpoints[path] = bps
+                        local bufnr = vim.fn.bufadd(path)
+                        if bufnr > 0 then
+                            for _, bp in ipairs(bps) do
+                                dap_breakpoints.set({
+                                    condition = bp.condition,
+                                    hit_condition = bp.hitCondition,
+                                    log_message = bp.logMessage,
+                                }, bufnr, bp.line)
+                            end
+                        end
                     end
                 end
             end

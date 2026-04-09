@@ -6,7 +6,6 @@ return {
             -- `snacks.nvim` integration is recommended, but optional
             ---@module "snacks" <- Loads `snacks.nvim` types for configuration intellisense
             "folke/snacks.nvim",
-            optional = true,
             opts = {
                 input = {}, -- Enhances `ask()`
                 picker = { -- Enhances `select()`
