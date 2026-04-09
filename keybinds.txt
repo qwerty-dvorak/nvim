@@ -1,0 +1,94 @@
+# Neovim Keybinds Reference
+
+## Window/Split Management
+<leader>v       Vertical split
+<leader>s      Horizontal split
+<leader>q      Close current split
+<C-h>          Navigate to left window
+<C-j>          Navigate to bottom window
+<C-k>          Navigate to top window
+<C-l>          Navigate to right window
+<A-h>          Shrink window width
+<A-l>          Grow window width
+<A-k>          Grow window height
+<A-j>          Shrink window height
+
+## Tab Management
+<leader>tn     New tab
+<leader>tc     Close tab
+<leader>th     Previous tab
+<leader>tl     Next tab
+<leader>tf     First tab
+<leader>to     Last tab
+<leader>1-5    Go to tab 1-5
+
+## Buffer Operations
+<leader>bd     Delete current buffer (prompt if unsaved)
+<leader>bD     Force delete current buffer
+<leader>ba     Delete all buffers
+<leader>bh     Show and switch to hidden buffer
+<leader>bl     List and switch buffers
+<leader>bn     Next buffer
+<leader>bp     Previous buffer
+<leader>bf     First buffer
+<leader>bb     Toggle last buffer
+<leader>bs     Save and switch to next buffer
+<leader>bw     Write current buffer
+<leader>bwn    Write and next buffer
+<leader>bwp    Write and previous buffer
+<leader>br     Reload current buffer from disk
+<leader>b1     Go to buffer 1
+<leader>b2     Go to buffer 2
+<leader>b3     Go to buffer 3
+<leader>bk     Kill buffer and go to previous
+<leader>bm     Move to buffer by number
+
+## File Operations
+<leader>e      Toggle file explorer
+<leader>w      Save file
+<leader>x      Save and close
+<leader>cd     Change to current file directory
+<leader>so     Reload vim config
+
+## Terminal
+<leader>t      Open terminal in vertical split
+<leader>r      Run current line in shell
+<Esc>          Exit terminal mode (terminal mode)
+<C-h>          Navigate left from terminal
+<C-j>          Navigate down from terminal
+<C-k>          Navigate up from terminal
+<C-l>          Navigate right from terminal
+
+## C/C++ Development
+<leader>m      Run make
+<leader>cn     Next quickfix item
+<leader>cp     Previous quickfix item
+<leader>co     Open quickfix window
+<leader>cc     Close quickfix window
+<leader>hx     Toggle hex view
+<leader>ds     Run valgrind memory check
+<leader>run    Run compiled executable
+
+## General Navigation
+<leader>jl     Show jump list
+
+## Text Editing (Visual Mode)
+< <           Indent left and restore selection
+>             Indent right and restore selection
+J             Move selected lines down
+K             Move selected lines up
+
+## Search
+n              Next search result centered
+N              Previous search result centered
+<Esc>          Clear search highlights (normal mode)
+
+## Insert Mode
+<C-u>          Delete to start of line (undo-friendly)
+<C-w>          Delete word (undo-friendly)
+
+## Normal Mode
+J              Join lines without moving cursor
+Y              Yank to end of line
+Q              Start recording macro
+<C-a>          Select all
