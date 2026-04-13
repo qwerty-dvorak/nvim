@@ -62,5 +62,5 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-keymap("n", "<leader>ds", ":!valgrind --leak-check=full --show-leak-kinds=all %<CR>", { desc = "Run valgrind memory check" })
-keymap("n", "<leader>run", ":!./a.out<CR>", { desc = "Run compiled executable" })
+keymap("n", "<leader>ds", ":!valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out 2>&1 | less -R<CR>", { desc = "Run valgrind memory check" })
+keymap("n", "<leader>run", ":!./a.out 2>&1; echo; read -p 'Press Enter to continue'", { desc = "Run compiled executable" })
